@@ -1,0 +1,10 @@
+Multipass BILATERAL FILTER. V4.0 [Fine Computation, RGB and CieLAB color Spaces]
+
+This application applies Multipass Bilateral Filter to color Images.
+Bilateral filtering is an Edge-preserving smoothing filter. This technique extends the concept of Gaussian smoothing by weighting the filter coefficients with their corresponding relative pixel intensities. Pixels that are very different in intensity from the central pixel are weighted less even though they may be in close proximity to the central pixel. This is effectively a convolution with a non-linear Gaussian filter, with weights based on pixel intensities. This is applied as two Gaussian filters at a localized pixel neighborhood , one in the spatial domain, and one in the intensity domain.
+Some Parameters make result image with a cartoon-like appearance.
+[ can someone speed up EFF_BilateralFilter Sub? ]
+ 
+
+PREVIEW mode:
+To select Frame click first angle and then click opposite angle.
