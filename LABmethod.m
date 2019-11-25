@@ -1,7 +1,7 @@
 function smoothedRBG = LABmethod(inputImage)
 tic;
-imRGB = imread(inputImage);
-imLAB = rgb2lab(imRGB);
+% imRGB = imread(inputImage);
+imLAB = rgb2lab(inputImage);
 % figure;
 % imshow(imLAB);
 % title('imLAB image')
@@ -13,15 +13,15 @@ imLAB = rgb2lab(imRGB);
 % patchVar = std2(edist).^2;
 
 % DoS = 2*patchVar;
-DoS = 10;
+DoS = 5;
 smoothedLAB = imLAB;
 
-for i = 1:50
+for i = 1:30
     smoothedLAB = imbilatfilt(smoothedLAB,DoS);
 end
 % smoothedLAB = imbilatfilt(imLAB);
 
-smoothedRBG = lab2rgb(smoothedLAB,'Out','uint8');
+smoothedRBG = lab2rgb(smoothedLAB);
 
 % figure;
 % imshow(imRGB);

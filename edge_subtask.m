@@ -1,6 +1,7 @@
 % Main Script
 function im1 = edge_subtask(inputImage)
-orig_im = imread(inputImage);
+% orig_im = imread(inputImage);
+orig_im = inputImage;
 im = rgb2ycbcr(orig_im);
 im = im(:,:,1);
 % im = double(im);
@@ -15,6 +16,9 @@ im = im(:,:,1);
 % imshow(med_im,[])
 
 canny_im = canny_edge_detection(im);
+% canny_im = imdilate(canny_im,[1 1; 1 1]);
+% figure;
+% imshow(canny_im);
 % figure
 % subplot(1,3,1)
 % imshow(edge(im,'canny'),[])
@@ -34,6 +38,7 @@ im1 = edge(im,'Canny',threshold);
 im1 = imdilate(im1,[1 1; 1 1]);
 
 im1 = 1 - im1;
+% im1 = 1 - canny_im/255;
 
 % im1 = bwareaopen(im1,100);
 % imshow(im1,[])
