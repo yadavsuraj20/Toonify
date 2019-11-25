@@ -19,7 +19,15 @@ canny_im = canny_edge_detection(im);
 C = 0.25;
 threshold_low = max(1,C*(mean2(im)-std2(im)))/255;
 threshold_high = min(254,C*(mean2(im)+std2(im)))/255;
-threshold = [threshold_low threshold_high];
+
+% if threshold_low > threshold_high
+%     temp = threshold_high;
+%     threshold_high = threshold_low;
+%     threshold_low = temp;
+% end
+
+% threshold = [threshold_low threshold_high]
+threshold = [0.07 0.17];
 im1 = edge(im,'Canny',threshold);
 % imshow(im1);
 % title('Canny function')
